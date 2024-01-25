@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="./assets/css/stylesheet.css" />
+</head>
+<body>
+    <header class="container">
+         <h1>Weather Dashboard</h1>
+         <input type="text" id="locationInput" placeholder="Enter a City">
+         <button id="searchBtn">Search</button>
+         <div class="WeatherInfo">
+            <h2 id="location"></h2>
+            <img class="weather-icon" src="./assets/images/cloud-bolt-solid.svg"/>
+            <ul id="currConditions">
+              <li id="currTemperature">32</li>&deg;
+              <li id="currHumidity">humidity</li>
+              <li id="currWindSpeed">Wind Speet</li>
+            </ul>
+            <ul id="futConditions">
+              <li id="futTemperature">32</li>&deg;
+              <li id="futHumidity">humidity</li>
+              <li id="futWindSpeed">Wind Speed</li>
+            </ul>
+         </div>
+        </header>
+        <section class="daySection">
+          <div class="dayCard">
+            <img src="./assets/images/cloud-rain-solid.svg" class="icon"/>
+            <div class="dayOfWeek">Monday</div>
+            <div>32&deg;</div>
+          </div>
+          <div class="dayCard">
+            <img src="./assets/images/cloud-rain-solid.svg" class="icon"/>
+            <div class="dayOfWeek">Tuesday</div>
+            <div>32&deg;</div>
+          </div>  
+          <div class="dayCard">
+            <img src="./assets/images/cloud-rain-solid.svg" class="icon"/>
+            <div class="dayOfWeek">Wednesday</div>
+            <div>32&deg;</div>
+          </div> 
+           <div class="dayCard">
+            <img src="./assets/images/cloud-rain-solid.svg" class="icon"/>
+            <div class="dayOfWeek">Thursday</div>
+            <div>32&deg;</div>
+          </div> 
+           <div class="dayCard">
+            <img src="./assets/images/cloud-rain-solid.svg" class="icon"/>
+            <div class="dayOfWeek">Friday</div>
+            <div>32&deg;</div>
+          </div>
+        </section>
+        <template></template>
+        <script src="https://kit.fontawesome.com/e3614f7629.js" crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
