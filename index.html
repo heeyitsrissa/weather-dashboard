@@ -10,51 +10,37 @@
 <body>
     <header class="container">
          <h1>Weather Dashboard</h1>
-         <input type="text" id="locationInput" placeholder="Enter a City">
-         <button id="searchBtn">Search</button>
-         <div class="WeatherInfo">
-            <h2 id="location"></h2>
+         <h2 id="date"></h2>
+         <form id="search-form">
+          <label for="city-input">Enter City: </label>
+          <input type="text" id="city-input" required>
+          <button id='submitBtn' type="submit">Search</button>
+      </form>
+    </header>
+         <section id="weatherInfo">
             <img class="weather-icon" src="./assets/images/cloud-bolt-solid.svg"/>
-            <ul id="currConditions">
-              <li id="currTemperature">32</li>&deg;
-              <li id="currHumidity">humidity</li>
-              <li id="currWindSpeed">Wind Speet</li>
-            </ul>
-            <ul id="futConditions">
-              <li id="futTemperature">32</li>&deg;
-              <li id="futHumidity">humidity</li>
-              <li id="futWindSpeed">Wind Speed</li>
-            </ul>
-         </div>
-        </header>
-        <section class="daySection">
+         </section>
+
+        <section id="forecast">
           <div class="dayCard">
             <img src="./assets/images/cloud-rain-solid.svg" class="icon"/>
-            <div class="dayOfWeek">Monday</div>
-            <div>32&deg;</div>
           </div>
           <div class="dayCard">
             <img src="./assets/images/cloud-rain-solid.svg" class="icon"/>
-            <div class="dayOfWeek">Tuesday</div>
-            <div>32&deg;</div>
           </div>  
           <div class="dayCard">
             <img src="./assets/images/cloud-rain-solid.svg" class="icon"/>
-            <div class="dayOfWeek">Wednesday</div>
-            <div>32&deg;</div>
           </div> 
            <div class="dayCard">
             <img src="./assets/images/cloud-rain-solid.svg" class="icon"/>
-            <div class="dayOfWeek">Thursday</div>
-            <div>32&deg;</div>
           </div> 
            <div class="dayCard">
             <img src="./assets/images/cloud-rain-solid.svg" class="icon"/>
-            <div class="dayOfWeek">Friday</div>
-            <div>32&deg;</div>
           </div>
         </section>
-        <template></template>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+        integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/e3614f7629.js" crossorigin="anonymous"></script>
     <script src="./assets/js/script.js"></script>
 </body>
