@@ -23,6 +23,7 @@ async function getWeatherData(city, cnt = 5, units = 'imperial') {
 
     const forecastResponse = await fetch(`${forecastUrl}?q=${city}&cnt=${cnt}&appid=${apiKey}&units=${units}`);
     const forecastData = await forecastResponse.json();
+    console.log(forecastResponse)
 
     return { current: weatherData, forecast: forecastData };
 }
@@ -54,21 +55,22 @@ function updateWeatherUI(weatherData) {
     }
 
         forecastEl.innerHTML = '';
-
+        // console.log('Forecast Data:', weatherData.forecast.list);
         weatherData.forecast.list.forEach(forecast => {
+            // console.log('Timestamp:', forecast.dt);
             const dateTime = new Date(forecast.dt * 1000);
             const description = forecast.weather[0].description;
             const temperature = forecast.main.temp;
             const windspeed = forecast.wind.speed;
             const humidity = forecast.main.humidity;
 
-            console.log(dateTime);
+        
 
             const dayCard = document.createElement('div');
             dayCard.classList.add('dayCard');
             dayCard.innerHTML = `
-                <img src="./assets/images/cloud-rain-solid.svg" class="icon"/>
-                <h3>${dateTime.toLocaleDateString('en-US', { weekday: 'long'})}</h3>
+            <h3>${dateTime.toLocaleDateString('en-US', { weekday: 'long'})}</h3>
+            <img src="./assets/images/cloud-rain-solid.svg" class="icon"/>
                 <p>Description: ${description}</p>
                 <p>Temperature: ${temperature}°F</p>
                 <p>Wind Speed: ${windspeed}mph</p>

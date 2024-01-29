@@ -4,8 +4,16 @@
 }
 
 body {
-    background-color: #5D76A9;
-}
+        background-image: url('/Users/marissapratt/bootcamp/homework/weather-dashboard/assets/images/erol-ahmed-d3pTF3r_hwY-unsplash.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+
+    }
+    
+
+
 
 h1 {
     display: flex;
@@ -13,17 +21,45 @@ h1 {
     font-size: 50px;
 }
 
-.dayCard {
+#search-form{
     display: flex;
-    justify-content: space-evenly;
-    padding: 3px;
-    border: 2px solid darkblue;
-    
+    justify-content: center;
+    margin: 20px;
 }
 
-.weather-icon {
-height: 50px;
-width: 50px;
+#forecast{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    
+}
+.dayCard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 3px;
+    margin: 10px;
+    border: 2px solid gray;
+    width: 300px;
+    height: 700px;
+    backdrop-filter: blur(8px);   
+    font-size: 30px;
+}
+
+#weatherInfo{
+    padding: 3px;
+    border: 2px solid gray;
+    width: 300px;
+    height: 700px;
+    backdrop-filter: blur(8px);
+    margin: 10px;
+    font-size: 30px;
+}
+
+#city-input{
+    background-color: transparent;
+    color: #fff;
+    opacity: .5;
 }
 
 .icon {
@@ -31,6 +67,7 @@ width: 50px;
     width: 50px;
 }
 
-.weatherInfo {
-    margin-top: 20px;
+#submitBtn{
+    border-radius: 8px;
+    background-color: transparent;
 }
