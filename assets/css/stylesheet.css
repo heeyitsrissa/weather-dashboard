@@ -28,6 +28,11 @@ h1 {
     color:black;
 }
 
+#city-list{
+    display: flex;
+    justify-content: center;
+}
+
 #forecast{
     display: flex;
     flex-direction: row;
@@ -64,6 +69,17 @@ h1 {
     opacity: .5;
 }
 
+h3{
+    display: flex;
+    justify-content: center;
+}
+
+li{
+    display: flex;
+    justify-content: center;
+   
+}
+
 .icon {
     height: 50px;
     width: 50px;
@@ -72,4 +88,9 @@ h1 {
 #submitBtn{
     border-radius: 8px;
     background-color: transparent;
+}
+
+button{
+    background-color: transparent;
+    backdrop-filter: blur(12px);
 }

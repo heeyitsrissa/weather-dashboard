@@ -33,6 +33,7 @@ const icons = {
     '50n': 'https://openweathermap.org/img/wn/50n@2x.png'
 };
 
+
 document.getElementById('weatherInfo').style.display = 'none';
 document.getElementById('forecast').style.display = 'none';
 
@@ -58,11 +59,10 @@ async function getWeatherData(city, units = 'imperial') {
 function getCities(){
     try {
         const savedCitiesJSON = localStorage.getItem('cities');
-        savedCities = (savedCitiesJSON && savedCitiesJSON !== 'undefined') ? JSON.parse(savedCitiesJSON) : [];
-    } catch (error) {
+        savedCities = savedCitiesJSON ? JSON.parse(savedCitiesJSON) : [];
+      } catch (error) {
         console.error('Error parsing savedCitiesJSON:', error);
-    }
-
+      }
     return savedCities;
 }
 
@@ -112,9 +112,11 @@ function updateWeatherUI(weatherData) {
     
 
 function saveCities(city){
-
-    savedCities.push(city);
-    localStorage.setItem('cities', JSON.stringify(savedCities));
+    const savedCities = getCities();
+      savedCities.push(city);
+      localStorage.setItem('cities', JSON.stringify(savedCities));
+      addCities(city);
+    
 }
 
 async function searchWeather() {
@@ -127,3 +129,23 @@ async function searchWeather() {
     updateWeatherUI(weatherData)
     }
 }
+
+function addCities(city){
+    const cityBtnList = document.getElementById('cityBtnList');
+
+    const listItems = document.createElement('li')
+    const button = document.createElement('button');
+    button.textContent = city;
+
+    button.addEventListener('click', function (){
+        searchWeatherForCity(city);
+    } )
+    listItems.appendChild(button)
+    cityBtnList.appendChild(listItems);
+};
+
+function searchWeatherForCity(city){
+    document.getElementById('city-input').value = city;
+    searchWeather();
+}
+
