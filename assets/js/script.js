@@ -62,6 +62,7 @@ function getCities(){
         savedCities = savedCitiesJSON ? JSON.parse(savedCitiesJSON) : [];
       } catch (error) {
         console.error('Error parsing savedCitiesJSON:', error);
+        savedCities = [];
       }
     return savedCities;
 }
@@ -112,11 +113,12 @@ function updateWeatherUI(weatherData) {
     
 
 function saveCities(city){
-    const savedCities = getCities();
+   let savedCities = getCities();
+    if(!savedCities.includes(city)){
       savedCities.push(city);
       localStorage.setItem('cities', JSON.stringify(savedCities));
       addCities(city);
-    
+    }
 }
 
 async function searchWeather() {
